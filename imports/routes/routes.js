@@ -22,7 +22,7 @@ export const onAuthChange = (isAuthenticated) => {
   const isAuthenticatedPage=authenticatedPages.includes(pathname);
 
   if(isUnauthenticatedPage && isAuthenticated) {
-    browserHistory.replace('/dasboard');
+    browserHistory.replace('/dashboard');
   } else if(isAuthenticatedPage && !isAuthenticated) {
     browserHistory.replace('/');
   }
@@ -37,6 +37,7 @@ export const routes = (
         <Route exact path="/" component={Login}/>
         <Route path="/signup" component={Signup}/>
         <Route path="/dashboard" component={Dashboard}/>
+        <Route path="/dashboard/:id" component={Dashboard}/>
         <Route component={NotFound}/>
 
      </Switch>
